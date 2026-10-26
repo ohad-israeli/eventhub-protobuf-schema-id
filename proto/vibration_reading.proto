@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package iot.telemetry;
+
+// A vibration reading from an industrial equipment sensor.
+message VibrationReading {
+  string equipment_id = 1;
+  string equipment_type = 2;
+  double value = 3;
+  string unit = 4;           // "mm/s"
+  int64 timestamp_ms = 5;
+  string site = 6;
+  string axis = 7;           // "X", "Y", or "Z" -- vibration-specific
+}

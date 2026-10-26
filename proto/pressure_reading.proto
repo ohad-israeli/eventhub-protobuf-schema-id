@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package iot.telemetry;
+
+// A pressure reading from an industrial equipment sensor.
+message PressureReading {
+  string equipment_id = 1;
+  string equipment_type = 2;
+  double value = 3;
+  string unit = 4;           // "psi"
+  int64 timestamp_ms = 5;
+  string site = 6;
+  double max_rated_psi = 7;  // pressure-specific: the equipment's rated limit
+}

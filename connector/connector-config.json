@@ -1,0 +1,23 @@
+{
+  "connector.class": "AzureEventHubsSource",
+  "name": "eventhub-sensor-readings-source",
+  "kafka.auth.mode": "KAFKA_API_KEY",
+  "kafka.api.key": "${CC_API_KEY}",
+  "kafka.api.secret": "${CC_API_SECRET}",
+  "azure.eventhubs.sas.keyname": "${EVENTHUBS_SAS_KEYNAME}",
+  "azure.eventhubs.sas.key": "${EVENTHUBS_SAS_KEY}",
+  "azure.eventhubs.namespace": "${EVENTHUB_NAMESPACE}",
+  "azure.eventhubs.hub.name": "sensor-readings",
+  "azure.eventhubs.consumer.group": "$Default",
+  "kafka.topic": "iot.sensor-readings",
+  "azure.eventhubs.partition.starting.position": "END_OF_STREAM",
+  "azure.eventhubs.transport.type": "AMQP",
+  "azure.eventhubs.offset.type": "OFFSET",
+  "max.events": "50",
+  "tasks.max": "1",
+
+  "transforms": "addSchemaId",
+  "transforms.addSchemaId.type": "com.ohadisraeli.smt.SchemaIdValuePrefixRouter$Value",
+  "transforms.addSchemaId.custom.smt.artifact.id": "${CC_SMT_ARTIFACT_ID}",
+  "transforms.addSchemaId.subject.id.map": "iot.temperature-readings-value=${TEMPERATURE_SCHEMA_ID},iot.vibration-readings-value=${VIBRATION_SCHEMA_ID},iot.pressure-readings-value=${PRESSURE_SCHEMA_ID}"
+}

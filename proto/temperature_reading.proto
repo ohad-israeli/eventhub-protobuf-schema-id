@@ -1,0 +1,13 @@
+syntax = "proto3";
+
+package iot.telemetry;
+
+// A temperature reading from an industrial equipment sensor.
+message TemperatureReading {
+  string equipment_id = 1;   // e.g. "pump-07", "compressor-12"
+  string equipment_type = 2; // e.g. "pump", "compressor", "motor"
+  double value = 3;
+  string unit = 4;           // "C"
+  int64 timestamp_ms = 5;
+  string site = 6;           // e.g. "plant-a-line-3"
+}

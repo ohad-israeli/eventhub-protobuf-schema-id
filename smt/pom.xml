@@ -1,0 +1,24 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.ohadisraeli</groupId>
+  <artifactId>schema-id-value-prefix-smt</artifactId>
+  <version>1.0.0</version>
+  <packaging>jar</packaging>
+
+  <properties>
+    <maven.compiler.source>11</maven.compiler.source>
+    <maven.compiler.target>11</maven.compiler.target>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+
+  <dependencies>
+    <!-- Already present on the Connect worker's classpath; not bundled into the jar. -->
+    <dependency>
+      <groupId>org.apache.kafka</groupId>
+      <artifactId>connect-api</artifactId>
+      <version>3.7.0</version>
+      <scope>provided</scope>
+    </dependency>
+  </dependencies>
+</project>

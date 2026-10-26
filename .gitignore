@@ -1,0 +1,15 @@
+.venv/
+__pycache__/
+*.pyc
+producer/sensor_reading_pb2.py
+.env
+.env.*
+.terraform/
+*.tfvars
+terraform.tfstate*
+
+# Secrets — never commit
+connector-config.local.json
+
+# Build output
+target/
