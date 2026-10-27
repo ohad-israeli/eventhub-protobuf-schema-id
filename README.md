@@ -1,6 +1,6 @@
 # Schema-tagging raw Protobuf from Azure Event Hubs into Confluent Cloud
 
-> Article: pending — link will be added once published.
+> Article: [Schema-Tagging Native Protobuf from Azure Event Hubs](https://ohad-israeli.github.io/projects/eventhub-protobuf-schema-id)
 
 Industrial equipment publishes sensor readings (temperature, vibration, pressure) as
 native Protobuf bytes straight to Azure Event Hubs — no Confluent client, no Confluent
